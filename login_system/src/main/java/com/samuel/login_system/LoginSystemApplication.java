@@ -10,3 +10,4 @@ public class LoginSystemApplication {
 		SpringApplication.run(LoginSystemApplication.class, args);
 	}
 }
+ // docker-compose up -d
