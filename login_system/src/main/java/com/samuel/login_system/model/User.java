@@ -23,7 +23,7 @@ public class User {
 
     // 2. Dados do usuario
     @Column(nullable = false) // Nao aceita nulo
-    private String nome;
+    private String name;
 
     @Column(unique = true, nullable = false) // Unico e Obrigatorio
     private String login; // Este será o e-mail
@@ -35,7 +35,7 @@ public class User {
     private String telephone;
 
     @Column(length = 8) // Tamanho 8
-    private String CEP;
+    private String Cep;
 
     private String address; // Tudo que vira da API
 
