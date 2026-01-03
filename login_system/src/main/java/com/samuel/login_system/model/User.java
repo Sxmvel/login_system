@@ -1,4 +1,4 @@
-package com.samuel.login_system.repository.model;
+package com.samuel.login_system.model;
 
 import jakarta.persistence.*; // Anotações JPA ( Banco de dados)
 import lombok.Data; // Getters / Setters Automaticos
@@ -8,9 +8,8 @@ import lombok.AllArgsConstructor; // Construtor cheio
 import java.util.List;
 import java.util.UUID;
 
-
 @Entity
-@Table (name = "tb_users")
+@Table(name = "tb_users")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,7 +18,7 @@ public class User {
 
     // 1. Chave Primaria da tabela usuario
     @Id
-    @GeneratedValue (strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     // 2. Dados do usuario
@@ -40,11 +39,8 @@ public class User {
 
     private String address; // Tudo que vira da API
 
-
     // Relacionamento com a classe de dispositivos
-    @OneToMany(mappedBy = "User", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) 
     private List<Device> devices;
-    
-    
-}
 
+}

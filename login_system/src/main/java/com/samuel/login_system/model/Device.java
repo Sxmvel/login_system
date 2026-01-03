@@ -1,4 +1,4 @@
-package com.samuel.login_system.repository.model;
+package com.samuel.login_system.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -27,7 +27,7 @@ public class Device {
 
 
     // Relacao com user 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
