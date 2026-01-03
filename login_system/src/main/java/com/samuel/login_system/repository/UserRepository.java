@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public interface UserRepository extends JpaRepository<User, UUID> {
 
-    // Magic Method: O Spring lê "findByLogin" e cria o SQL:
+    // O Spring lê "findByLogin" e cria o SQL:
     // SELECT * FROM tb_users WHERE login = ?
     Optional<User> findByLogin(String login);
 
