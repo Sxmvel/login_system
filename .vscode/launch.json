@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-LoginSystemApplication<login_system>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.samuel.login_system.LoginSystemApplication",
+            "projectName": "login_system",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
