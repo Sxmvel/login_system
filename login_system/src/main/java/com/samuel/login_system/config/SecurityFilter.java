@@ -41,21 +41,21 @@ public class SecurityFilter extends OncePerRequestFilter {
                 // 3. Busca o usuário no banco
                 User user = userRepository.findByLogin(login).orElseThrow(() -> new RuntimeException("User Not Found"));
 
-                // 4. Cria o objeto de autenticação do Spring (Standard)
+                // 4. Cria o objeto de autenticação do Spring
 
                
                 var authentication = new UsernamePasswordAuthenticationToken(user, null, Collections.emptyList());
                 
-                // 5. Salva no contexto (Agora o Spring sabe quem é você!)
+                // 5. Salva no contexto
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         }
         
-        // 6. Continua o fluxo (vai para o próximo filtro ou para o Controller)
+        // 6. Continua o fluxo 
         filterChain.doFilter(request, response);
     }
 
-    // Método auxiliar para pegar o token "limpo" (sem a palavra Bearer)
+    // Método auxiliar para pegar o token "limpo" 
     private String recoverToken(HttpServletRequest request){
         var authHeader = request.getHeader("Authorization");
         if(authHeader == null) return null;
