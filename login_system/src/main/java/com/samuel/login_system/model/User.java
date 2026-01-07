@@ -3,6 +3,7 @@ package com.samuel.login_system.model;
 import jakarta.persistence.*; // Anotações JPA ( Banco de dados)
 import lombok.NoArgsConstructor; // Construtor vazio
 import lombok.AllArgsConstructor; // Construtor cheio
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.List;
 import java.util.UUID;
@@ -38,6 +39,7 @@ public class User {
     private String address; // Tudo que vira da API
 
     // Relacionamento com a classe de dispositivos
+    @JsonIgnore
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL) 
     private List<Device> devices;
 
